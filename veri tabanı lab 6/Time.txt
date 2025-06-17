@@ -1,0 +1,23 @@
+fatih@fthozkctn:~$ # Redis
+time seq 1 100 | xargs -P10 -n1 -I{} sh -c 'curl -s "http://localhost:8080/nosql-lab-rd/ogrenci_no/2025000001"' > ~/redis-time.results
+xargs: warning: options --max-args and --replace/-I/-i are mutually exclusive, ignoring previous --max-args value
+
+real    0m0.248s
+user    0m0.520s
+sys     0m0.615s
+
+enes@ubuntu-pc:~$ # Hazelcast
+time seq 1 100 | xargs -P10 -n1 -I{} sh -c 'curl -s "http://localhost:8080/nosql-lab-hz/ogrenci_no/2025000001"' > ~/hz-time.results
+xargs: warning: options --max-args and --replace/-I/-i are mutually exclusive, ignoring previous --max-args value
+
+real    0m0.201s
+user    0m0.495s
+sys     0m0.482s
+
+enes@ubuntu-pc:~$ # MongoDB
+time seq 1 100 | xargs -P10 -n1 -I{} sh -c 'curl -s "http://localhost:8080/nosql-lab-mon/ogrenci_no/2025000001"' > ~/mongodb-time.results
+xargs: warning: options --max-args and --replace/-I/-i are mutually exclusive, ignoring previous --max-args value
+
+real    0m0.190s
+user    0m0.485s
+sys     0m0.475s

@@ -1,0 +1,53 @@
+fatih@fthozkctn:~$ siege -H "Accept: application/json" -c10 -r100 "http://192.168.1.15:8080/nosql-lab-hz/ogrenci_r/2025000001" > hazelcast.results
+
+fatih@fthozkctn:~$ cat hazelcast.results
+{
+    "transactions": 1000,
+    "availability": 100.00,
+    "elapsed_time": 0.52,
+    "data_transferred": 0.05,
+    "response_time": 0.01,
+    "transaction_rate": 1923.08,
+    "throughput": 0.10,
+    "concurrency": 12.31,
+    "successful_transactions": 1000,
+    "failed_transactions": 0,
+    "longest_transaction": 0.04,
+    "shortest_transaction": 0.00
+}
+
+fatih@fthozkctn:~$ siege -H "Accept: application/json" -c10 -r100 "http://192.168.1.15:8080/nosql-lab-rd/ogrenci_r/2025000001" > redis.results
+
+fatih@fthozkctn:~$ cat redis.results
+{
+    "transactions": 1000,
+    "availability": 100.00,
+    "elapsed_time": 0.38,
+    "data_transferred": 0.05,
+    "response_time": 0.00,
+    "transaction_rate": 2631.58,
+    "throughput": 0.13,
+    "concurrency": 10.05,
+    "successful_transactions": 1000,
+    "failed_transactions": 0,
+    "longest_transaction": 0.02,
+    "shortest_transaction": 0.00
+}
+
+fatih@fthozkctn:~$ siege -H "Accept: application/json" -c10 -r100 "http://192.168.1.15:8080/nosql-lab-mg/ogrenci_r/2025000001" > mongodb.results
+
+fatih@fthozkctn:~$ cat mongodb.results
+{
+    "transactions": 1000,
+    "availability": 100.00,
+    "elapsed_time": 0.65,
+    "data_transferred": 0.05,
+    "response_time": 0.01,
+    "transaction_rate": 1538.46,
+    "throughput": 0.08,
+    "concurrency": 11.54,
+    "successful_transactions": 1000,
+    "failed_transactions": 0,
+    "longest_transaction": 0.05,
+    "shortest_transaction": 0.00
+}
